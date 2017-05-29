@@ -15,10 +15,19 @@
                     <p>
                         <h:commandLink action="hello?faces-redirect=true">Hello</h:commandLink>
                     </p>
+                    <p>
+                        <h:commandButton action="#{navigation.hello()}"
+                                         value="Controller to Hello"></h:commandButton>
+                    </p>
+                    <p>
+                        <h:commandLink action="#{navigation.hello}"
+                                       value="Controller to Hello" />
+                    </p>
                 </h:form>
                 <p>
                     <h:link outcome="hello">Hello</h:link>
                 </p>
+
             </f:view>
         </ui:define>
     </ui:composition>
