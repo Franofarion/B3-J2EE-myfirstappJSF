@@ -23,14 +23,25 @@ public class CourseManager {
     }
 
     public Course findCourse(Integer n) {
-        // a coder
-        Course caca = new Course();
-        return caca;
+        // a tester
+        Long id = Long.valueOf(n);
+        Course returnValue = new Course();
+        for(Course course: listeCourses){
+            if(course.getId().equals(id)){
+                returnValue = course;
+            }
+        }
+        return returnValue;
     }
 
     public Course saveCourse(Course c) {
         if (c.getId() == null) {
-            //ajout dans la liste
+            Long maxId = Long.MIN_VALUE;
+            for(Course course : listeCourses){
+                maxId = Long.compare(maxId, course.getId()) < 0 ? course.getId() : maxId;
+            }
+            c.setId(maxId);
+            listeCourses.add(c);
         } else {
             //le rechercher et le modifier
         }
