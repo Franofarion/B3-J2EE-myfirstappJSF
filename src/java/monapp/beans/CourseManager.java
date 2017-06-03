@@ -43,12 +43,18 @@ public class CourseManager {
             c.setId(maxId);
             listeCourses.add(c);
         } else {
-            //le rechercher et le modifier
+            for(Course course: listeCourses){
+                if(course.getId().equals(c.getId())){
+                    deleteCourse(course);
+                    listeCourses.add(c);
+                }
+            } 
         }
         return c;
     }
 
     public void deleteCourse(Course c) {
-        //le supprimer
+        int index = listeCourses.indexOf(c);
+        listeCourses.remove(index);
     }
 }
