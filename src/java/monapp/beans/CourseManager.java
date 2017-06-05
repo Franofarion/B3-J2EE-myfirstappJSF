@@ -14,11 +14,14 @@ public class CourseManager {
     private List<Course> listeCourses;
 
     public CourseManager() {
-        //creer la liste de course
+        Course c1 = new Course();
+        c1.setName("Architecture JEE");
+        c1.setHours(60);
+        c1.setDescription("Introduction à JEE.");
+        saveCourse(c1);
     }
 
     public List<Course> findCourses() {
-         //a coder
         return listeCourses;
     }
 

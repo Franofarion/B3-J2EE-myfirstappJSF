@@ -18,18 +18,54 @@
                                 <th>Name</th>
                                 <th>Actions</th>
                             </tr>
+                            <!-- JSTL Iteration : -->
+                            <!--
                             <c:forEach var="c" items="#{course.courses}">
                                 <tr>
                                     <td>#{c.id}</td>
                                     <td>#{c.name}</td>
                                     <td><h:commandLink
                                             action="#{course.show(c.id)}"
-                                            value="Show" />
+                                            value="Show"/>
                                     </td>
                                 </tr>
                             </c:forEach>
-                            <tr>
+                            -->
+                            <!-- Tag JSF : -->
+                            <ui:repeat var="c" varStatus="s" value="#{course.courses}">
+                                <tr>
+                                    <td>#{s.index}</td>
+                                    <td>#{c.id}</td>
+                                    <td>#{c.name}</td>
+                                    <td>
+                                        <h:commandLink action="#{course.show(c.id)}"
+                                                       value="Show"/>
+                                    </td>
+                                </tr>
+                            </ui:repeat>
                         </table>
+                        <!-- Tag JSF : -->
+                        <h:dataTable value="#{course.courses}" var="o"
+                                     styleClass="course-table" headerClass="course-table-header"
+                                     footerClass="course-table-header"
+                                     rowClasses="course-table-odd-row,course-table-even-row">
+                            <h:column>
+                                <f:facet name="header">Number</f:facet>
+                                <h:outputText value="#{o.id}" />
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">Name</f:facet>
+                                <h:outputText value="#{o.name}" />
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">Hours</f:facet>
+                                <h:outputText value="#{o.hours}" />
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">Action</f:facet>
+                                <h:commandLink value="Show" action="#{course.show(o.id)}" />
+                            </h:column>
+                        </h:dataTable>
                     </h:form>
                 </f:view>
             </ui:define>
