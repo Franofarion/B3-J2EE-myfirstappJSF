@@ -7,6 +7,7 @@ package monapp.beans;
 
 import javax.ejb.Stateless;
 import java.util.List;
+import java.util.ArrayList;
 
 @Stateless
 public class CourseManager {
@@ -14,11 +15,7 @@ public class CourseManager {
     private List<Course> listeCourses;
 
     public CourseManager() {
-        Course c1 = new Course();
-        c1.setName("Architecture JEE");
-        c1.setHours(60);
-        c1.setDescription("Introduction à JEE.");
-        saveCourse(c1);
+        listeCourses = new ArrayList<Course>();
     }
 
     public List<Course> findCourses() {
@@ -26,22 +23,22 @@ public class CourseManager {
     }
 
     public Course findCourse(Integer n) {
-        // a tester
-        Long id = Long.valueOf(n);
         Course returnValue = new Course();
         for(Course course: listeCourses){
-            if(course.getId().equals(id)){
+            if(course.getId().equals(n)){
                 returnValue = course;
             }
         }
         return returnValue;
     }
 
-    public Course saveCourse(Course c) {
+    public void saveCourse(Course c) {
         if (c.getId() == null) {
-            Long maxId = Long.MIN_VALUE;
-            for(Course course : listeCourses){
-                maxId = Long.compare(maxId, course.getId()) < 0 ? course.getId() : maxId;
+            Integer maxId = 0;
+            if(listeCourses.size() >= 1){
+                for(Course course : listeCourses){
+                    maxId = Integer.compare(maxId, course.getId()) < 0 ? course.getId() : maxId;
+                }
             }
             c.setId(maxId);
             listeCourses.add(c);
@@ -53,7 +50,6 @@ public class CourseManager {
                 }
             } 
         }
-        return c;
     }
 
     public void deleteCourse(Course c) {

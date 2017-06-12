@@ -9,7 +9,7 @@ import java.io.Serializable;
 
 public class Course implements Serializable {
 
-    Long id;
+    Integer id;
     String name;
     Integer hours;
     String level;
@@ -23,11 +23,11 @@ public class Course implements Serializable {
         this.level = level;
     }
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
