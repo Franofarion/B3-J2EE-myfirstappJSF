@@ -15,9 +15,15 @@
                 <p>Name: #{c.name}</p>
                 <p>Hours: #{c.hours}</p>
                 <p>Description: #{c.description}</p>
+                <h:form>
+                    <p>
+                        <h:commandLink action="editCourse">Modifier</h:commandLink>
+                    </p>
+                </h:form>
                 <p>
                     <h:link outcome="courses">List of courses</h:link>
                 </p>
+                
             </f:view>
         </ui:define>
     </ui:composition>
