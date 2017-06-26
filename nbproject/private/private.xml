@@ -2,17 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/home/baptiste/DATA/Documents/Programmation/J2EE/myapp/web/hello.xhtml</file>
-            <file>file:/home/baptiste/DATA/Documents/Programmation/J2EE/myapp/web/bye.xhtml</file>
-            <file>file:/home/baptiste/DATA/Documents/Programmation/J2EE/myapp/web/template/menu.xhtml</file>
-            <file>file:/home/baptiste/DATA/Documents/Programmation/J2EE/myapp/src/java/monapp/beans/Course.java</file>
-            <file>file:/home/baptiste/DATA/Documents/Programmation/J2EE/myapp/web/counter.xhtml</file>
-            <file>file:/home/baptiste/DATA/Documents/Programmation/J2EE/myapp/src/java/monapp/beans/CourseManager.java</file>
-            <file>file:/home/baptiste/DATA/Documents/Programmation/J2EE/myapp/src/java/monapp/beans/ApplicationCounter.java</file>
-            <file>file:/home/baptiste/DATA/Documents/Programmation/J2EE/myapp/web/courses.xhtml</file>
-            <file>file:/home/baptiste/DATA/Documents/Programmation/J2EE/myapp/src/java/monapp/beans/CourseControler.java</file>
-            <file>file:/home/baptiste/DATA/Documents/Programmation/J2EE/myapp/web/template/mylayout.xhtml</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>
